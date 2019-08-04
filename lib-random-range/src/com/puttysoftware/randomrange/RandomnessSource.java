@@ -9,7 +9,7 @@ class RandomnessSource {
 
     /** The source. */
     // Fields
-    private static Random SOURCE = null;
+    private static final Random theSource = new Random();
 
     /**
      * Instantiates a new randomness source.
@@ -26,16 +26,13 @@ class RandomnessSource {
      */
     // Methods
     private static Random getSource() {
-        if (RandomnessSource.SOURCE == null) {
-            RandomnessSource.SOURCE = new Random();
-        }
-        return RandomnessSource.SOURCE;
+        return RandomnessSource.theSource;
     }
 
     /**
-     * Next int.
+     * Next integer.
      *
-     * @return the int
+     * @return the integer
      */
     static int nextInt() {
         return RandomnessSource.getSource().nextInt();
