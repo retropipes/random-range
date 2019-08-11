@@ -46,7 +46,21 @@ public class RandomRange {
     /**
      * Generate.
      *
-     * @return the int
+     * @return the generated integer
+     */
+    public static int generate(final int minimum, final int maximum) {
+        if (maximum - minimum + 1 == 0) {
+            return Math.abs(RandomnessSource.nextInt()) + minimum;
+        }
+        return Math.abs(
+                RandomnessSource.nextInt() % (maximum - minimum + 1))
+                + minimum;
+    }
+
+    /**
+     * Generate.
+     *
+     * @return the generated integer
      */
     public int generate() {
         if (this.maximum - this.minimum + 1 == 0) {
