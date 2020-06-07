@@ -1,3 +1,2 @@
 # lib-java-random-range
-
-No longer maintained.
+ Random Range Generator utility for Java
